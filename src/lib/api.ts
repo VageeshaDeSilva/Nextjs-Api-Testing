@@ -12,8 +12,9 @@ export interface Product {
 
 // getting all products from dataBase
 export async function getProducts(): Promise<Product[]> {
-  const res = await fetch('https://fakestoreapi.com/productss', {
+  const res = await fetch('https://fakestoreapi.com/products', {
     cache: 'no-store' // this mean no caching save and every time user calls this api, user get latest product list, or use 'force-cache' for SSG
+    // next: { revalidate: 10 } // ISR: Revalidate every 10 seconds
   });
   
   if (!res.ok){
