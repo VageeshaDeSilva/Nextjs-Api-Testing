@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getProduct, getAllProductIds } from '@/lib/api';
 import Link from 'next/link';
 import Image from 'next/image';
+import AddToCartButton from '@/components/AddToCartButton';
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -22,10 +23,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
     <div className="container mx-auto px-4 py-8">
       <Link 
         href="/products"
-        className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium mb-6 transition-colors"
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white hover:scale-105 hover:shadow-md active:scale-95 font-medium mb-6 transition-all duration-200 group"
       >
         <svg 
-          className="w-5 h-5" 
+          className="w-5 h-5 transition-transform duration-200 group-hover:-translate-x-1" 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
@@ -70,8 +71,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <p className="text-gray-700 text-yellow-700">{product.description}</p>
             </div>
           )}
-
-          {/* <AddToCartButton productId={product.id} /> */}
+          <AddToCartButton productId={product.id} />
         </div>
       </div>
     </div>
@@ -102,20 +102,3 @@ export async function generateStaticParams() {
   }));
 }
 
-// Client Component for interactivity
-// 'use client';
-// function AddToCartButton({ productId }: { productId: string }) {
-//   const handleAddToCart = () => {
-//     // Client-side logic
-//     console.log(`Added product ${productId} to cart`);
-//   };
-
-//   return (
-//     <button
-//       onClick={handleAddToCart}
-//       className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition"
-//     >
-//       Add to Cart
-//     </button>
-//   );
-// }

@@ -15,56 +15,46 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #0f172a;
   
-  /* Your Custom Colors */
-  --primary: #3b82f6;
-  --secondary: #8b5cf6;
-  --accent: #f59e0b;
-  --success: #10b981;
-  --danger: #ef4444;
+  --primary: #6366f1;       
+  --secondary: #ec4899;     
+  --accent: #f59e0b;        
+  --success: #10b981;       
+  --danger: #ef4444;        
+  --warning: #f59e0b;       
+  
+  /* Navigation Colors - Light Mode */
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-text: #1e293b;
+  --nav-hover: #6366f1;
+  --nav-border: #e2e8f0;
+
+  /* Gradient colors */
+  --bgGradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Dark Mode (when .dark class is added) */
+:root.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  
+  --primary: #818cf8;
+  --secondary: #f472b6;
+  --accent: #fbbf24;
+  --success: #34d399;
+  --danger: #f87171;
   --warning: #fbbf24;
   
-  /* Navigation Colors */
-  --nav-bg: #ffffff;
-  --nav-text: #1f2937;
-  --nav-hover: #3b82f6;
-  --nav-border: #e5e7eb;
+  /* Navigation Colors - Dark Mode */
+  --nav-bg: rgba(15, 23, 42, 0.8);
+  --nav-text: #e2e8f0;
+  --nav-hover: #818cf8;
+  --nav-border: #334155;
 
-  /* --bgGradient: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); */
-  --bgGradient: linear-gradient(to right, #2563eb, #9333ea);
+  --bgGradient: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
 }
-
-
-
-@media (prefers-color-scheme: dark) {
-  :root.light {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary: #60a5fa;
-    --secondary: #a78bfa;
-    
-    /* Dark mode Navigation Colors */
-    --nav-bg: #1a1a1a;
-    --nav-text: #e5e7eb;
-    --nav-hover: #60a5fa;
-    --nav-border: #333333;
-  }
-  :root.dark {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary: #60a5fa;
-    --secondary: #a78bfa;
-    
-    /* Dark mode Navigation Colors */
-    --nav-bg: #1a1a1a;
-    --nav-text: #e5e7eb;
-    --nav-hover: #60a5fa;
-    --nav-border: #333333;
-  }
-}
-
 
 body {
   background: var(--background);
