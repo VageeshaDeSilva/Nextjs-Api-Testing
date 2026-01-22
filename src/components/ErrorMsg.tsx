@@ -6,7 +6,7 @@ export default function Error({ error }: { error: Error }) {
       <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
         <div className="mb-4">
           <svg 
-            className="mx-auto h-16 w-16 text-red-600" 
+            className="mx-auto h-16 w-16 text-danger" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor"
@@ -19,8 +19,8 @@ export default function Error({ error }: { error: Error }) {
             />
           </svg>
         </div>
-        <h2 className="text-2xl font-bold text-red-600 mb-3">Something went wrong!</h2>
-        <p className="text-red-600 mb-6">{error.message}</p>
+        <h2 className="text-2xl font-bold text-danger mb-3">Something went wrong!</h2>
+        <p className="text-danger mb-6">{error.message}</p>
         <button 
           onClick={() => window.location.reload()} 
           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-200"
