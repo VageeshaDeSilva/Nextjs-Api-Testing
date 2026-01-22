@@ -24,7 +24,7 @@ export async function getProducts(): Promise<Product[]> {
 }
 
 export async function getProduct(id: string): Promise<Product | null> {
-  const res = await fetch(`https://api.example.com/products/${id}`, {
+  const res = await fetch(`https://fakestoreapi.com/products/${id}`, {
     next: { revalidate: 3600 } // ISR: Revalidate every hour
   });
   
@@ -35,5 +35,5 @@ export async function getProduct(id: string): Promise<Product | null> {
 // For static generation: get all product IDs
 export async function getAllProductIds(): Promise<string[]> {
   const products = await getProducts();
-  return products.map(p => p.id);
+  return products.map(p => String(p.id));
 }
