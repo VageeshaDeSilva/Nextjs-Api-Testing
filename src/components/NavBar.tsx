@@ -2,9 +2,11 @@
 
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function NavBar() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     // Check for saved theme preference or default to system preference
@@ -29,19 +31,49 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <ul className="navbar-links">
+        <Link href="/" className="navbar-logo">
+          <Image 
+            src={theme === 'dark' ? '/VAGEESHAwhite.png' : '/VAGEESHA.png'}
+            alt="VAGEESHA Logo" 
+            width={100} 
+            height={100}
+            className="object-contain"
+          />
+        </Link>
+
+        {/* Hamburger Button - Mobile Only */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="hamburger-btn"
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          )}
+        </button>
+
+        <ul className={`navbar-links ${isMenuOpen ? 'navbar-links-open' : ''}`}>
           <li>
-            <Link href="/" className="navbar-link">
+            <Link href="/" className="navbar-link" onClick={() => setIsMenuOpen(false)}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="/products" className="navbar-link">
+            <Link href="/products" className="navbar-link" onClick={() => setIsMenuOpen(false)}>
               Products
             </Link>
           </li>
           <li>
-            <Link href="/users" className="navbar-link">
+            <Link href="/users" className="navbar-link" onClick={() => setIsMenuOpen(false)}>
               Users
             </Link>
           </li>

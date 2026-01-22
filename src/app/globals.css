@@ -77,6 +77,20 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.5);
 }
 
 .navbar-links {
@@ -142,4 +156,71 @@ body {
 .theme-toggle svg {
   width: 20px;
   height: 20px;
+}
+
+/* Hamburger Menu Button - Hidden on Desktop */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--nav-text);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+  background-color: var(--nav-border);
+  color: var(--nav-hover);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 60;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: calc(100vh - 70px);
+    background-color: var(--nav-bg);
+    border-left: 1px solid var(--nav-border);
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-links-open {
+    right: 0;
+  }
+
+  .navbar-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .navbar-link:hover {
+    background-color: var(--nav-border);
+  }
+
+  .navbar-link::after {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+  }
 }
