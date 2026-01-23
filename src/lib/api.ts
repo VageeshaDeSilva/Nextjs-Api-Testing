@@ -34,6 +34,11 @@ export async function getProduct(id: string): Promise<Product | null> {
 
 // For static generation: get all product IDs
 export async function getAllProductIds(): Promise<string[]> {
-  const products = await getProducts();
-  return products.map(p => String(p.id));
+  try {
+    const products = await getProducts();
+    return products.map(p => String(p.id));
+  } catch (error) {
+    console.warn('Failed to fetch products during build, returning empty array:', error);
+    return []; // Return empty array to allow build to continue
+  }
 }

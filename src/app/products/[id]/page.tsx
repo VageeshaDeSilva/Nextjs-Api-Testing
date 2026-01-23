@@ -92,13 +92,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
 // }
 
 // Optional: Pre-generate popular products at build time
-export async function generateStaticParams() {
-  const ids = await getAllProductIds();
+// export async function generateStaticParams() {
+//   const ids = await getAllProductIds();
   
-  // Generate only first 100 products at build time
-  // Others will be generated on-demand (ISR)
-  return ids.slice(0, 100).map((id) => ({
-    id: id,
-  }));
-}
+//   // Generate only first 100 products at build time
+//   // Others will be generated on-demand (ISR)
+//   return ids.slice(0, 100).map((id) => ({
+//     id: id,
+//   }));
+// }
 
