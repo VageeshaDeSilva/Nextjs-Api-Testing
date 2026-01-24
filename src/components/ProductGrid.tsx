@@ -20,10 +20,10 @@ export default function ProductGrid({ products }: ProductGridProps) {
             <Link href={`/products/${product.id}`} key={product.id} className="block">
             <div
             key={product.id}
-            className="bg-white rounded-t-lg hover:rounded-b-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:scale-[1.02]"
+            className="bg-secondary rounded-t-lg hover:rounded-b-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1 hover:scale-[1.02]"
             >
             {product.image && (
-              <div className="w-full h-64 bg-gray-100 flex items-center justify-center p-4 transition-all duration-300 group-hover:bg-gray-200">
+              <div className="w-full h-64 bg-primary flex items-center justify-center p-4 transition-all duration-300 group-hover:bg-gray-200">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -53,7 +53,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
             </div>
           </div>
           </Link>
-          <div className="p-4 pt-0 bg-white rounded-b-lg shadow-md">
+          <div className="p-4 pt-0 bg-secondary rounded-b-lg shadow-md">
               <AddToCartButton productId={product.id.toString()} />
             </div>
           </div>

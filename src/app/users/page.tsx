@@ -81,10 +81,10 @@ export default function UsersPage() {
                     {user.name.charAt(0)}
                   </div>
                   <div className="ml-4">
-                    <h2 className="text-lg font-semibold text-[--foreground]">
+                    <h2 className="text-lg font-semibold text-white dark:text-[--foreground]">
                       {user.name}
                     </h2>
-                    <p className="text-sm text-[--foreground] opacity-60">ID: {user.id}</p>
+                    <p className="text-sm text-white dark:text-[--foreground] opacity-60">ID: {user.id}</p>
                   </div>
                 </div>
 
@@ -92,29 +92,29 @@ export default function UsersPage() {
                 <div className="space-y-3 text-sm">
                   {/* Email */}
                   <div className="border-l-4 border-[--primary] pl-3 py-1 bg-[--primary] bg-opacity-5 dark:bg-opacity-10 rounded-r">
-                    <p className="text-[--foreground] opacity-60 text-xs uppercase tracking-wide font-semibold">
+                    <p className="text-white dark:text-[--foreground] opacity-60 text-xs uppercase tracking-wide font-semibold">
                       Email
                     </p>
-                    <p className="text-[--foreground] truncate">{user.email}</p>
+                    <p className="text-white dark:text-[--foreground] truncate">{user.email}</p>
                   </div>
 
                   {/* Phone */}
                   {user.phone && (
                     <div className="border-l-4 border-[--success] pl-3 py-1 bg-[--success] bg-opacity-5 dark:bg-opacity-10 rounded-r">
-                      <p className="text-[--foreground] opacity-60 text-xs uppercase tracking-wide font-semibold">
+                      <p className="text-white dark:text-[--foreground] opacity-60 text-xs uppercase tracking-wide font-semibold">
                         Phone
                       </p>
-                      <p className="text-[--foreground]">{user.phone}</p>
+                      <p className="text-white dark:text-[--foreground]">{user.phone}</p>
                     </div>
                   )}
 
                   {/* Company */}
                   {user.company && (
                     <div className="border-l-4 border-[--accent] pl-3 py-1 bg-[--accent] bg-opacity-5 dark:bg-opacity-10 rounded-r">
-                      <p className="text-[--foreground] opacity-60 text-xs uppercase tracking-wide font-semibold">
+                      <p className="text-white dark:text-[--foreground] opacity-60 text-xs uppercase tracking-wide font-semibold">
                         Company
                       </p>
-                      <p className="text-[--foreground]">{user.company.name}</p>
+                      <p className="text-white dark:text-[--foreground]">{user.company.name}</p>
                     </div>
                   )}
                 </div>
